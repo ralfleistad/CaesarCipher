@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="res/style.css" />
+    <script type="text/javascript" src="res/main.js"></script>
+
+    <title>CAESAR CIPHER</title>
+
+</head>
+<body>
+
+    <div id="jumbo">
+        <header>
+            <nav>
+                <h1 id="headline">CAESAR CIPHER</h1>
+                <ul id="navbar">
+                    <li><a href="#over">OVERVIEW</a></li>
+                    <li><a href="#term">TERMINOLOGY</a></li>
+                    <li><a href="#biblio">BIBLIOGRAPHY</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <div id="main">
+            <p>The Caesar cipher is one of the simplest and well known encryption algorithms there is.
+                The basic principle of the cipher is to shift every letter of a word a certain amount
+                to either the right or the left. In modern practice plaintext encrypted with this
+                cipher would not be considered secure, however at it's time is was highly effective.
+            </p>
+            <textarea id="string" name="inputfield" placeholder="Caesar was a great man!"></textarea>
+            <br />
+            <div id="func">
+                    <input type="button" id="btnEncrypt" class="btn" onclick="encrypt()" value="ENCRYPT"/>
+                    <input type="number" id="shift" min="1" max="25" value="12" placeholder="SHIFT" />
+                    <input type="button" id="btnDecrypt" class="btn" onclick="decrypt()" value="DECRYPT"/>
+            </div>
+        </div>
+    </div>
+
+    <div id="over" class="content">
+        <h1>overview</h1>
+
+        <p class="keyword"><strong>How does it work?</strong></p>
+        <img src="res/cipher.png" alt="picture of a caesar-cipher" id="figure_1">
+        <p class="keyword">The Caesar cipher takes a message and shifts every letter with the amount of the key.
+            <br />
+            For example lets take the letter 'A' and use 6 as the key, by shifting the 'A' six places it would become 'G'.
+            This is applied to the entire message and will give you a encrypted message that earlier was easily readable in plaintext.
+        </p>
+
+        <p class="keyword spc"><strong>How is it implemented?</strong></p>
+        <p class="keyword"> To do this I utilized JavaScripts built in function to get the ASCII code for each character in the message. Thereon I had to write a custom
+            function for the modulus operator since JavaScript does not return the correct remainder.
+            Further I used an algorithm that uses that remainder and standard ASCII codes for upper and lowercase letters to 
+            automatically shift each of the letters.
+            <br />
+            I've implemented it so that if you shift and a letter would need to go further than 'Z', it loops back around 
+            to the begining of the alphabet and keeps shifting from there.
+        </p>
+
+        <p class="keyword spc"><strong>Do you want a challenge? Decrypt this</strong></p>
+        <div class="tooltip">Need a hint? Hover over me
+            <span class="tooltipText"> 10 &lt; x &gt; 15</span>
+        </div>
+        <p>Spwwz, lyo hpwnzxp ez esp xpyelw splwes szewtyp. Tq jzf lcp zmdpddtgp-nzxafwdtgp, acpdd 1 cpaplepowj. Tq jzf lcp nz-opapyopye, awpldp ldv dzxpzyp ez acpdd 2 qzc jzf. Tq jzf sl gpxfwetawp apcdzylwtetpd, acpdd 3, 4, 5, lyo 6. Tq jzf lcp alclyzto, hp vyzh hsz jzf lc p lyo hslejzf hlye. Delj zy esp wtyp dz hp nly eclnp jzfc nlww. Tq jzf lcp opwfdtzylw, acpdd 7 lyo jzfcnlww htww mp eclydqpccpo ez esp xzespc dsta. Tq jzf lcp dnstkzascpytn, wtdepy nlcpqfwwjlyo l dxlww gztnp htww epww jzf hstns yfxmpc ez acpdd. Tq jzf lcp xlytn -opacpddtgp, teozpdy?e xleepc hstns yfxmpc jzf acpdd, yz zyp htww lydhpc. Tq jzf lcp oj dwpitn, acpdd969696969696969. Tq jzf slgp l ypcgzfd otdzcopc, awpldp qtorpe htes esp ol ds vpj fyetw lcpacpdpyeletgp nzxpd zy esp wtyp. Tq jzf slgp lxypdtl, acpdd 8 lyo delep jzfc ylxp, loocpdd,aszyp yfxmpc, olep zq mtces, dzntlw dpnfctej yfxmpc, lyo jzfc xzespc ?d xltopy ylxp. Tq jzfslgp azde-eclfxletn decpdd otdzcopc, dwzhwj lyo nlcpqfwwj acpdd 0 00. Tq jzf slgp mtazwlcotdzcopc, awpldp wplgp l xpddlrp lqepc esp mppa zc mpqzcp esp mp pa. Zc lqepc esp mppa.Awpldp hlte qzc esp mppa. Tq jzf slgp wzh dpwq-pdeppx, awpldp sly r fa. Lww zfc zapclezcdlcp ezz mfdj ez elwv ez jzf. Tq jzf slgp dszce-epcx xpxzcj wzdd, acpdd 9. Tq jzf slgp dszce-epcxxpxzcj wzdd, acpdd 9. Tq jzf slgp dszce-epcx xpxzcj wzdd , acpdd 9. Tq jzf slgp dszce-epcxxpxzcj wzdd, acpdd 9?
+        </p>
+        
+    </div>
+
+    <div id="term" class="content">
+            <h1>terminology</h1>
+            <p class="keyword"><strong>Caesar - </strong>When talking about Caesar it I refer to Julius Caesar, who was the first in recorded history to use this scheme. </p>
+            <p class="keyword"><strong>Cipher - </strong>In cryptography this is a series of defined steps that can be followed to either encrypt or decrypt a message.</p>
+            <p class="keyword"><strong>Algorithm - </strong>A process where either you or a machine conduct a series of steps to do calculations or process information.</p>
+            <p class="keyword"><strong>Shift - </strong>Replacing an alphabetical character with another that corresponds to the key.</p>
+            <p class="keyword"><strong>Modulus - </strong>This is an operation that findes the remainder after dividing two numbers.</p>
+            <p></p>
+    </div>
+
+    <div id="biblio" class="content">
+            <h1>bibliography</h1>
+            <label for="caesar1">Caesar Cipher - </label>
+            <a id="caesar1" href="https://en.wikipedia.org/wiki/Caesar_cipher" target="_blank">https://en.wikipedia.org/wiki/Caesar_cipher</a>
+                <br />
+            <label for="caesar2">Caesar Cipher - </label>
+            <a id="caesar2" href="https://www.geeksforgeeks.org/caesar-cipher/" target="_blank">https://www.geeksforgeeks.org/caesar-cipher/</a>
+                <br />
+            <label for="cipher">Cipher - </label>
+            <a id="cipher" href="https://en.wikipedia.org/wiki/Cipher" target="_blank">https://en.wikipedia.org/wiki/Cipher</a>
+                <br />
+            <label for="visual">Visual depiction - </label>
+            <a id="visual" href="https://www.thejavaprogrammer.com/caesar-cipher-java-encryption-decryption/" target="_blank">https://www.thejavaprogrammer.com/caesar-cipher-java-encryption-decryption/</a>
+            <p></p>
+    </div>
+
+
+    <footer>
+        <p>ralf leistad @ math 170 - project 3</p>
+    </footer>
+
+</body>
+</html>
